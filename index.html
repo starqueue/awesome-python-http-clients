@@ -792,7 +792,7 @@ function updateThemeIcon() {
 
 (function() {
   const saved = localStorage.getItem('theme');
-  const prefer = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const prefer = 'dark';
   document.documentElement.setAttribute('data-theme', saved || prefer);
 })();
 
