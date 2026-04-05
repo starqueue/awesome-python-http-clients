@@ -6,6 +6,7 @@
     "category": "General-Purpose",
     "stars": 52600,
     "description": "The de facto standard HTTP client. Simple, elegant API for HTTP/1.1.",
+    "highlight": "The library that made Python HTTP simple. Its API became the gold standard that nearly every other client imitates. If you're unsure what to use, start here.",
     "features": ["sync", "connection-pool", "cookies", "auth", "streaming", "multipart", "proxy", "compression"],
     "ci_workflow": "run-tests.yml",
     "deprecated": false
@@ -17,6 +18,7 @@
     "category": "General-Purpose",
     "stars": 15100,
     "description": "Modern HTTP client with both sync and async APIs, HTTP/2 support, and requests-compatible interface.",
+    "highlight": "The modern successor to requests. Uniquely offers both sync and async in one package with HTTP/2, making it the go-to for new projects that may need async later.",
     "features": ["sync", "async", "http2", "typed", "connection-pool", "proxy", "streaming", "requests-api"],
     "ci_workflow": "test-suite.yml",
     "deprecated": false
@@ -28,6 +30,7 @@
     "category": "General-Purpose",
     "stars": 2100,
     "description": "Drop-in replacement for requests with HTTP/2, HTTP/3, DNSSEC, OCSP, and multiplexing.",
+    "highlight": "The most protocol-complete requests drop-in. Adds HTTP/2, HTTP/3, DNSSEC, OCSP, SSE, and WebSocket while keeping the exact same API — swap one import and gain a decade of protocol upgrades.",
     "features": ["sync", "async", "http2", "http3", "websocket", "sse", "connection-pool", "proxy", "requests-api", "compression"],
     "ci_workflow": "run-tests.yml",
     "deprecated": false
@@ -39,6 +42,7 @@
     "category": "General-Purpose",
     "stars": 3800,
     "description": "Thread-safe connection pooling, retries, and multipart encoding. Foundation for requests and pip.",
+    "highlight": "The invisible backbone of Python HTTP. Used by requests, pip, and boto3 — it's likely already running in your stack. Provides the connection pooling and retry logic that higher-level clients rely on.",
     "features": ["sync", "connection-pool", "retry", "multipart", "proxy", "compression"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -50,6 +54,7 @@
     "category": "General-Purpose",
     "stars": 510,
     "description": "Small, fast HTTP client with persistent connections, caching, and multiple authentication schemes.",
+    "highlight": "One of the oldest Python HTTP clients still maintained. Built-in HTTP caching before it was fashionable. Heavily used in Google's Python SDKs.",
     "features": ["sync", "connection-pool", "caching", "auth", "compression"],
     "ci_workflow": "test.yaml",
     "deprecated": false
@@ -61,6 +66,7 @@
     "category": "General-Purpose",
     "stars": 1100,
     "description": "Thin Python wrapper over libcurl. Very high performance with full access to libcurl options.",
+    "highlight": "When raw speed matters more than API elegance. Exposes the full power of libcurl's C engine — every protocol, every option, every callback. The fastest option for bulk transfers.",
     "features": ["sync", "async", "connection-pool", "proxy", "auth", "streaming", "multipart"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -72,6 +78,7 @@
     "category": "Async-First",
     "stars": 15600,
     "description": "Asynchronous HTTP client/server for asyncio with WebSocket support and Cython-accelerated parser.",
+    "highlight": "The original and most mature async HTTP client for Python. Cython-accelerated parsing gives it an edge in high-throughput scenarios. Also doubles as a web server.",
     "features": ["async", "websocket", "streaming", "connection-pool", "cookies", "multipart", "proxy", "compression"],
     "ci_workflow": "ci-cd.yml",
     "deprecated": false
@@ -83,6 +90,7 @@
     "category": "Async-First",
     "stars": 605,
     "description": "Requests-like API built on Twisted's HTTP client using Deferreds.",
+    "highlight": "The bridge between the requests world and Twisted's event loop. If your project is already on Twisted, this gives you a familiar API without pulling in asyncio.",
     "features": ["async", "cookies", "multipart", "streaming", "requests-api"],
     "ci_workflow": "ci.yaml",
     "deprecated": false
@@ -94,6 +102,7 @@
     "category": "Async-First",
     "stars": 512,
     "description": "Async HTTP library for trio and curio with a requests-like API. Largely unmaintained.",
+    "highlight": "Was the first requests-like client for Trio and Curio. Showed that async HTTP didn't need to look different. Now largely superseded by httpx's async support.",
     "features": ["async", "cookies", "streaming", "connection-pool", "requests-api"],
     "ci_workflow": null,
     "deprecated": false
@@ -105,6 +114,7 @@
     "category": "Async-First",
     "stars": 21900,
     "description": "Mature async HTTP client with pure-Python and libcurl backends, part of the Tornado framework.",
+    "highlight": "Battle-tested at Facebook/Meta scale. Unique dual-backend design: swap between pure-Python and libcurl implementations. Predates asyncio and still thrives.",
     "features": ["async", "http2", "streaming", "proxy", "auth"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -116,6 +126,7 @@
     "category": "Concurrency Wrappers",
     "stars": 2200,
     "description": "Wraps requests with concurrent.futures for simple async-style parallel HTTP requests.",
+    "highlight": "The simplest path to parallel HTTP in Python. No new API to learn — just swap Session for FuturesSession and your requests return Futures. Zero mental overhead.",
     "features": ["sync", "async", "requests-api", "connection-pool"],
     "ci_workflow": "main.yml",
     "deprecated": false
@@ -127,6 +138,7 @@
     "category": "Concurrency Wrappers",
     "stars": 4600,
     "description": "Requests + gevent for asynchronous HTTP via greenlets with simple batch API.",
+    "highlight": "Parallel HTTP in two lines of code. grequests.map() sends dozens of requests concurrently using gevent's monkey-patching — no async/await required.",
     "features": ["async", "requests-api", "connection-pool"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -138,6 +150,7 @@
     "category": "Concurrency Wrappers",
     "stars": 1500,
     "description": "High-performance HTTP client built directly for gevent with C-based HTTP parser.",
+    "highlight": "Unlike grequests (which wraps requests), this is built from scratch for gevent with a C parser. Much faster for high-concurrency gevent workloads like scraping pipelines.",
     "features": ["async", "connection-pool", "streaming", "requests-api", "compression"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -149,6 +162,7 @@
     "category": "Low-Level Transport",
     "stars": 536,
     "description": "Minimal, low-level HTTP client. The transport layer beneath httpx.",
+    "highlight": "The engine room of httpx. If you need to build a custom HTTP client with full control over transport behavior, connection lifecycle, or want to create httpx-compatible transports, this is your starting point.",
     "features": ["sync", "async", "http2", "connection-pool", "proxy", "typed"],
     "ci_workflow": "test-suite.yml",
     "deprecated": false
@@ -160,6 +174,7 @@
     "category": "Low-Level Transport",
     "stars": 60,
     "description": "Next-gen urllib3 fork with HTTP/2, HTTP/3, async, DNSSEC, and Happy Eyeballs.",
+    "highlight": "What urllib3 would look like if rebuilt today. Adds HTTP/2, HTTP/3, async, and modern DNS features while maintaining API compatibility. Powers niquests under the hood.",
     "features": ["sync", "async", "http2", "http3", "connection-pool", "compression", "websocket", "sse"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -171,6 +186,7 @@
     "category": "Low-Level Transport",
     "stars": 1300,
     "description": "Python binding for the Node.js llhttp parser. Very fast C-based HTTP parsing.",
+    "highlight": "The fastest HTTP parser available for Python. Wraps Node.js's battle-tested llhttp in C. Used by uvicorn to achieve its benchmark-topping performance.",
     "features": ["sync"],
     "ci_workflow": "tests.yml",
     "deprecated": false
@@ -182,6 +198,7 @@
     "category": "Protocol Implementation",
     "stars": 549,
     "description": "Pure-Python HTTP/1.1 protocol implementation with bring-your-own-I/O design.",
+    "highlight": "The sans-I/O revolution for HTTP. Contains zero networking code — just a state machine that processes bytes. This design lets it work identically under asyncio, trio, threading, or anything else.",
     "features": ["sync", "async", "sans-io"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -193,6 +210,7 @@
     "category": "Protocol Implementation",
     "stars": 1033,
     "description": "Pure-Python HTTP/2 protocol stack with sans-I/O design and HPACK compression.",
+    "highlight": "The definitive HTTP/2 building block for Python. Same sans-I/O philosophy as h11 but for HTTP/2. Handles stream multiplexing, flow control, and HPACK — you just provide the bytes.",
     "features": ["sync", "async", "http2", "sans-io", "compression"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -204,6 +222,7 @@
     "category": "Protocol Implementation",
     "stars": 420,
     "description": "Pure-Python WebSocket protocol stack with sans-I/O state-machine design.",
+    "highlight": "Completes the python-hyper sans-I/O trio (h11, h2, wsproto). If you're building a custom server or client that needs WebSocket at the protocol level without opinionated I/O, this is it.",
     "features": ["sync", "async", "websocket", "sans-io", "compression"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -215,6 +234,7 @@
     "category": "Protocol Implementation",
     "stars": 46,
     "description": "Pure-Python HTTP/2 framing library for parsing and serializing HTTP/2 frames.",
+    "highlight": "The lowest level of the HTTP/2 stack — just frame parsing and serialization. Used internally by h2. Only reach for this if you're building your own HTTP/2 implementation.",
     "features": ["http2", "sans-io"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -226,6 +246,7 @@
     "category": "Protocol Implementation",
     "stars": 77,
     "description": "Pure-Python HPACK (HTTP/2 header compression) implementation.",
+    "highlight": "Standalone HPACK encoder/decoder. HTTP/2 mandates HPACK for header compression — this is the reference Python implementation used by h2 and others.",
     "features": ["http2", "sans-io", "compression"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -237,6 +258,7 @@
     "category": "Protocol Implementation",
     "stars": 1979,
     "description": "QUIC and HTTP/3 implementation for Python. Sans-I/O API used by mitmproxy and hypercorn.",
+    "highlight": "The leading Python HTTP/3 and QUIC implementation. Powers mitmproxy's HTTP/3 support and hypercorn's QUIC server. Essential if you're working with next-gen transport protocols.",
     "features": ["async", "http3", "sans-io"],
     "ci_workflow": "tests.yml",
     "deprecated": false
@@ -248,6 +270,7 @@
     "category": "Protocol Implementation",
     "stars": 42,
     "description": "Lightweight QUIC and HTTP/3 implementation used by niquests.",
+    "highlight": "A leaner alternative to aioquic, purpose-built as the HTTP/3 engine for the niquests/urllib3.future stack. Focuses on client-side QUIC without the full server implementation.",
     "features": ["async", "http3"],
     "ci_workflow": "CI.yml",
     "deprecated": false
@@ -259,6 +282,7 @@
     "category": "TLS Fingerprinting",
     "stars": 5400,
     "description": "Python binding for curl-impersonate via cffi. Browser TLS/JA3/HTTP2 fingerprint impersonation.",
+    "highlight": "The most popular anti-detection HTTP client for Python. Makes your requests look exactly like a real Chrome/Firefox/Safari browser at the TLS and HTTP/2 level. The go-to for bypassing bot protection.",
     "features": ["sync", "async", "http2", "http3", "tls-fingerprint", "websocket", "proxy", "requests-api"],
     "ci_workflow": "build-and-test.yaml",
     "deprecated": false
@@ -270,6 +294,7 @@
     "category": "TLS Fingerprinting",
     "stars": 2400,
     "description": "Patched curl that impersonates Chrome/Edge/Safari/Firefox TLS fingerprints. Core engine behind curl_cffi.",
+    "highlight": "The C engine that makes curl_cffi possible. A patched fork of curl compiled with BoringSSL to produce browser-identical TLS handshakes. The foundation of the Python TLS fingerprinting ecosystem.",
     "features": ["http2", "http3", "tls-fingerprint", "compression"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -281,6 +306,7 @@
     "category": "TLS Fingerprinting",
     "stars": 6400,
     "description": "Python module to bypass Cloudflare anti-bot pages. Inherits from requests.Session.",
+    "highlight": "Purpose-built to defeat Cloudflare's challenge pages. Solves JavaScript challenges and handles CAPTCHAs automatically. A drop-in requests.Session replacement for Cloudflare-protected sites.",
     "features": ["sync", "tls-fingerprint", "cookies", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -292,6 +318,7 @@
     "category": "TLS Fingerprinting",
     "stars": 1293,
     "description": "Async and blocking clients powered by Rust wreq with fine-grained TLS/HTTP2 fingerprinting and 100+ browser profiles.",
+    "highlight": "Rust-powered speed meets browser impersonation. 100+ device profiles, zero-copy transfers, and free-threaded safety (Python 3.13t). The performance-focused alternative to curl_cffi.",
     "features": ["sync", "async", "http2", "tls-fingerprint", "websocket", "proxy", "connection-pool"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -303,6 +330,7 @@
     "category": "TLS Fingerprinting",
     "stars": 813,
     "description": "Python wrapper around Go tls-client with browser TLS fingerprinting and 50+ browser profiles.",
+    "highlight": "Go-powered TLS fingerprinting. Wraps bogdanfinn's Go tls-client library via a shared library. Offers custom JA3 strings and H2 settings that the curl-based alternatives don't expose as directly.",
     "features": ["sync", "http2", "http3", "tls-fingerprint", "proxy", "requests-api"],
     "ci_workflow": null,
     "deprecated": false
@@ -314,6 +342,7 @@
     "category": "TLS Fingerprinting",
     "stars": 496,
     "description": "Fast Python HTTP client with browser impersonation (TLS/JA3/JA4/HTTP2), built on Rust rquest via PyO3.",
+    "highlight": "Rust-native browser impersonation via PyO3. Supports both JA3 and the newer JA4 fingerprinting standard. Pre-compiled wheels mean no Rust toolchain needed to install.",
     "features": ["sync", "http2", "tls-fingerprint", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -325,6 +354,7 @@
     "category": "TLS Fingerprinting",
     "stars": 302,
     "description": "Async wrapper around Go tls-client with auto-updating JA3 fingerprints.",
+    "highlight": "Differentiates itself with auto-updating fingerprints — JA3 profiles refresh automatically so they don't go stale as browsers update. Fully async unlike the base Python-Tls-Client.",
     "features": ["async", "tls-fingerprint", "proxy", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -336,6 +366,7 @@
     "category": "TLS Fingerprinting",
     "stars": 149,
     "description": "Browser-like TLS fingerprinting with automatic proxy rotation and TLS identifier rotation.",
+    "highlight": "Built-in proxy rotation and TLS identifier rotation per request. Designed for scraping at scale where you need both IP and fingerprint diversity without external tools.",
     "features": ["sync", "async", "tls-fingerprint", "proxy", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -347,6 +378,7 @@
     "category": "TLS Fingerprinting",
     "stars": 345,
     "description": "Built on Rust reqwest via PyO3. HTTP/1.1 and HTTP/2 with built-in mocking and middleware.",
+    "highlight": "Unique among Rust-backed clients for including built-in mocking and ASGI app testing. Also supports middleware chains and custom JSON serializers — more of a full framework than just a transport.",
     "features": ["sync", "async", "http2", "typed", "tls-fingerprint"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -358,6 +390,7 @@
     "category": "TLS Fingerprinting",
     "stars": 62,
     "description": "Ultra-fast binding for curl-impersonate via Cython. Lower overhead alternative to curl_cffi.",
+    "highlight": "Same curl-impersonate engine as curl_cffi but bound via Cython instead of CFFI. The tighter binding means lower per-call overhead — matters when making millions of requests.",
     "features": ["sync", "async", "http2", "tls-fingerprint"],
     "ci_workflow": "build-and-test.yaml",
     "deprecated": false
@@ -369,6 +402,7 @@
     "category": "Scraping / Browser",
     "stars": 13900,
     "description": "HTML parsing on top of requests with full JavaScript rendering via Chromium.",
+    "highlight": "The only requests-based library that can render JavaScript. Spins up a headless Chromium via pyppeteer when you need JS execution, but stays lightweight for static pages.",
     "features": ["sync", "async", "cookies", "connection-pool"],
     "ci_workflow": null,
     "deprecated": false
@@ -380,6 +414,7 @@
     "category": "Scraping / Browser",
     "stars": 4600,
     "description": "Browser-like website automation built on Requests and BeautifulSoup. Form filling, link following.",
+    "highlight": "Stateful browsing without a real browser. Maintains cookies, fills forms, follows links — like a lightweight Selenium for sites that don't need JavaScript. Perfect for legacy web apps.",
     "features": ["sync", "cookies", "auth", "requests-api"],
     "ci_workflow": "python-package.yml",
     "deprecated": false
@@ -391,6 +426,7 @@
     "category": "Scraping / Browser",
     "stars": 12498,
     "description": "Selenium Chromedriver patch that passes all bot detection systems.",
+    "highlight": "Patches Chromedriver at the binary level to remove all automation fingerprints. The most popular solution for scraping sites with aggressive bot detection that requires a real browser.",
     "features": ["sync", "async", "tls-fingerprint", "cookies", "proxy"],
     "ci_workflow": "workflow.yml",
     "deprecated": false
@@ -402,6 +438,7 @@
     "category": "Scraping / Browser",
     "stars": 12560,
     "description": "Browser automation framework with UC Mode for bot-detection bypass.",
+    "highlight": "Full-featured testing and scraping framework with a built-in 'UC Mode' that defeats anti-bot systems. More batteries-included than undetected-chromedriver — includes test runners, reporting, and page object patterns.",
     "features": ["sync", "async", "tls-fingerprint", "cookies", "proxy"],
     "ci_workflow": "python-package.yml",
     "deprecated": false
@@ -413,6 +450,7 @@
     "category": "Scraping / Browser",
     "stars": 1976,
     "description": "Extends Selenium to inspect and modify browser HTTP requests. Unmaintained.",
+    "highlight": "Lets you intercept, inspect, and modify HTTP requests made by a real browser. Unique ability to capture request/response headers and bodies during Selenium sessions.",
     "features": ["sync", "proxy", "streaming"],
     "ci_workflow": "cibuild.yml",
     "deprecated": false
@@ -424,6 +462,7 @@
     "category": "Declarative / API",
     "stars": 1000,
     "description": "Declarative HTTP client inspired by Retrofit. Define API clients using decorators and type hints.",
+    "highlight": "Python's answer to Java's Retrofit. Define your entire API as a decorated class — endpoints become methods, parameters become type hints. Generates the HTTP calls for you.",
     "features": ["sync", "async", "typed", "auth", "multipart", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -435,6 +474,7 @@
     "category": "Declarative / API",
     "stars": 1987,
     "description": "Modern, fast SOAP client built on lxml and requests.",
+    "highlight": "The definitive Python SOAP client. Auto-generates Python objects from WSDL definitions. If you're integrating with enterprise SOAP services, this is the only serious option.",
     "features": ["sync", "async", "soap", "auth"],
     "ci_workflow": "python-test.yml",
     "deprecated": false
@@ -446,6 +486,7 @@
     "category": "Declarative / API",
     "stars": 1667,
     "description": "Full-featured GraphQL client with sync/async and transport plugins (requests, aiohttp, httpx, websockets).",
+    "highlight": "The Swiss army knife of Python GraphQL clients. Pluggable transports mean it works with whatever HTTP client you already use. Supports subscriptions over WebSocket and file uploads.",
     "features": ["sync", "async", "graphql", "websocket"],
     "ci_workflow": "tests.yml",
     "deprecated": false
@@ -457,6 +498,7 @@
     "category": "Declarative / API",
     "stars": 551,
     "description": "Simple GraphQL Client with schema-based type system and code generation.",
+    "highlight": "Generates typed Python classes from your GraphQL schema. Unlike gql which works with raw queries, sgqlc gives you full IDE autocomplete and type safety for every field.",
     "features": ["sync", "graphql", "typed"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -468,6 +510,7 @@
     "category": "Declarative / API",
     "stars": 393,
     "description": "Generate fully typed async Python GraphQL client from schema and queries.",
+    "highlight": "Code-generates an entire typed async client from your .graphql files. You write the queries, it generates the Python. Zero runtime overhead from schema introspection.",
     "features": ["async", "graphql", "typed"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -479,6 +522,7 @@
     "category": "Declarative / API",
     "stars": 1930,
     "description": "Generate modern typed Python clients from OpenAPI 3.x specs.",
+    "highlight": "Feed it an OpenAPI spec, get a fully typed Python client with models, enums, and endpoint methods. Uses httpx under the hood. The modern alternative to swagger-codegen for Python.",
     "features": ["sync", "async", "typed"],
     "ci_workflow": "checks.yml",
     "deprecated": false
@@ -490,6 +534,7 @@
     "category": "Declarative / API",
     "stars": 185,
     "description": "Maintained community fork of the classic suds SOAP library.",
+    "highlight": "The community-maintained successor to the original suds. Lighter and simpler than zeep — good for straightforward SOAP integrations that don't need zeep's full power.",
     "features": ["sync", "soap", "auth"],
     "ci_workflow": "test_and_release.yml",
     "deprecated": false
@@ -501,6 +546,7 @@
     "category": "Declarative / API",
     "stars": 373,
     "description": "Lightweight SOAP client and server library.",
+    "highlight": "The minimalist SOAP option. No WSDL parsing wizardry — you construct SOAP envelopes more directly. Good when the WSDL is broken or you need raw control over the XML.",
     "features": ["sync", "soap"],
     "ci_workflow": null,
     "deprecated": false
@@ -512,6 +558,7 @@
     "category": "Requests Extensions",
     "stars": 1033,
     "description": "Official collection of utilities for requests: streaming multipart, SSLAdapter, auth dispatch.",
+    "highlight": "The official extension pack for requests. Streaming multipart uploads with progress bars, custom SSL/TLS adapters, and auth dispatching are the headliners. If requests can almost do what you need, check here first.",
     "features": ["sync", "multipart", "streaming", "auth"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -523,6 +570,7 @@
     "category": "Requests Extensions",
     "stars": 1300,
     "description": "Transparent persistent HTTP cache with SQLite, Redis, MongoDB, DynamoDB, and filesystem backends.",
+    "highlight": "Drop-in HTTP caching for requests with six storage backends. Swap Session for CachedSession and repeated API calls become instant. URL-pattern rules let you cache selectively.",
     "features": ["sync", "caching", "requests-api"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -534,6 +582,7 @@
     "category": "Requests Extensions",
     "stars": 1700,
     "description": "OAuth 1 and OAuth 2 support for Requests via OAuthlib.",
+    "highlight": "The standard way to do OAuth with requests. Handles the full OAuth 1 and OAuth 2 dance — token refresh, authorization URLs, callback handling. Used by thousands of API integrations.",
     "features": ["sync", "auth", "requests-api"],
     "ci_workflow": "run-tests.yml",
     "deprecated": false
@@ -545,6 +594,7 @@
     "category": "Requests Extensions",
     "stars": 400,
     "description": "Kerberos/GSSAPI authentication handler for Requests with mutual auth support.",
+    "highlight": "Enterprise SSO via Kerberos/GSSAPI. Handles SPNEGO negotiation and mutual authentication automatically. Essential for corporate environments with Active Directory.",
     "features": ["sync", "auth", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -556,6 +606,7 @@
     "category": "Requests Extensions",
     "stars": 346,
     "description": "NTLM authentication support for Requests.",
+    "highlight": "NTLM auth for Windows/IIS environments. When you need to authenticate against legacy Microsoft services that require NTLM instead of Kerberos.",
     "features": ["sync", "auth", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -567,6 +618,7 @@
     "category": "Requests Extensions",
     "stars": 188,
     "description": "AWS Signature Version 4 authentication for Requests.",
+    "highlight": "Signs requests with AWS SigV4 — needed for direct AWS API calls outside boto3. Useful when boto3 doesn't support a service or you want lighter-weight AWS access.",
     "features": ["sync", "auth", "requests-api"],
     "ci_workflow": "pythonpackage.yml",
     "deprecated": false
@@ -578,6 +630,7 @@
     "category": "Requests Extensions",
     "stars": 468,
     "description": "Mock out responses from the requests library for testing.",
+    "highlight": "The testing companion for requests. Register URL patterns with canned responses. Works as a context manager, decorator, or pytest fixture. Simpler than HTTPretty for requests-only codebases.",
     "features": ["sync", "requests-api"],
     "ci_workflow": "unit-test.yaml",
     "deprecated": false
@@ -589,6 +642,7 @@
     "category": "Requests Extensions",
     "stars": 220,
     "description": "Use Requests to talk to UNIX domain sockets (e.g. Docker API).",
+    "highlight": "Talk to UNIX sockets with the requests API. The standard way to hit the Docker daemon socket, snapd API, or any other socket-based service from Python.",
     "features": ["sync", "requests-api"],
     "ci_workflow": "ci-cd.yml",
     "deprecated": false
@@ -600,6 +654,7 @@
     "category": "Requests Extensions",
     "stars": 117,
     "description": "Rate-limiting session and adapter for Requests, backed by pyrate-limiter.",
+    "highlight": "Transparent rate limiting for requests. Set requests-per-second and it automatically throttles. Backed by pyrate-limiter's Leaky Bucket algorithm for smooth traffic shaping.",
     "features": ["sync", "retry", "requests-api"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -611,6 +666,7 @@
     "category": "Requests Extensions",
     "stars": 126,
     "description": "PKCS#12 client certificate support for Requests without temp files.",
+    "highlight": "Client certificate auth with .p12/.pfx files directly — no need to extract PEM files to disk. Important for security-sensitive environments where temp files are a risk.",
     "features": ["sync", "auth", "requests-api"],
     "ci_workflow": null,
     "deprecated": false
@@ -622,6 +678,7 @@
     "category": "Requests Extensions",
     "stars": 91,
     "description": "Transport adapter for file:// URLs with Requests.",
+    "highlight": "Lets requests.get('file:///path/to/file') work. Useful for code that needs to handle both HTTP and local file URLs through the same interface.",
     "features": ["sync", "requests-api"],
     "ci_workflow": null,
     "deprecated": false
@@ -633,6 +690,7 @@
     "category": "Requests Extensions",
     "stars": 70,
     "description": "FTP transport adapter for Requests.",
+    "highlight": "Adds FTP support to the requests API. Access FTP servers with the same session, auth, and interface you use for HTTP.",
     "features": ["sync", "requests-api"],
     "ci_workflow": null,
     "deprecated": false
@@ -644,6 +702,7 @@
     "category": "HTTPX Extensions",
     "stars": 350,
     "description": "RFC 9111 compliant HTTP caching for HTTPX, Requests, and ASGI frameworks.",
+    "highlight": "The only caching library that's fully RFC 9111 compliant. Works with both httpx and requests. Supports GraphQL-aware caching by hashing request bodies — unique among HTTP caches.",
     "features": ["sync", "async", "caching", "graphql", "typed", "streaming"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -655,6 +714,7 @@
     "category": "HTTPX Extensions",
     "stars": 205,
     "description": "Consume Server-Sent Events (SSE) with HTTPX.",
+    "highlight": "Clean SSE streaming for httpx. Essential for consuming LLM APIs (OpenAI, Anthropic) that stream responses as SSE. Handles reconnection and event parsing.",
     "features": ["sync", "async", "sse"],
     "ci_workflow": null,
     "deprecated": false
@@ -666,6 +726,7 @@
     "category": "HTTPX Extensions",
     "stars": 147,
     "description": "WebSocket support for HTTPX with sync and async APIs.",
+    "highlight": "Adds the missing WebSocket piece to httpx. Also provides ASGI/WebSocket testing utilities — test your FastAPI WebSocket endpoints without starting a server.",
     "features": ["sync", "async", "websocket"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -677,6 +738,7 @@
     "category": "HTTPX Extensions",
     "stars": 140,
     "description": "Authentication classes for HTTPX: OAuth2, API key, header-based, and more.",
+    "highlight": "What requests-oauthlib is to requests, httpx-auth is to httpx. Pre-built auth flows for OAuth2, Azure AD, AWS, API keys, and more. Handles token caching and refresh automatically.",
     "features": ["sync", "async", "auth"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -688,6 +750,7 @@
     "category": "HTTPX Extensions",
     "stars": 71,
     "description": "Retry layer for HTTPX with configurable backoff strategies.",
+    "highlight": "Purpose-built retry logic for httpx. Unlike general-purpose retry libraries (tenacity, backoff), this understands HTTP semantics — retries on 429/503, respects Retry-After headers.",
     "features": ["sync", "async", "retry"],
     "ci_workflow": "test-suite.yml",
     "deprecated": false
@@ -699,6 +762,7 @@
     "category": "HTTPX Extensions",
     "stars": 86,
     "description": "SOCKS4/5 and HTTP CONNECT proxy transports for HTTPX.",
+    "highlight": "Adds SOCKS proxy support that httpx lacks natively. Essential for routing httpx traffic through Tor or corporate SOCKS proxies.",
     "features": ["sync", "async", "proxy"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -710,6 +774,7 @@
     "category": "HTTPX Extensions",
     "stars": 73,
     "description": "HTTP caching for HTTPX transport layer.",
+    "highlight": "Implements CacheControl-style caching at the httpx transport level. Lighter than hishel if you just need basic caching without RFC 9111 compliance.",
     "features": ["sync", "async", "caching"],
     "ci_workflow": "test-suite.yml",
     "deprecated": false
@@ -721,6 +786,7 @@
     "category": "HTTPX Extensions",
     "stars": 444,
     "description": "Pytest fixture to mock HTTPX requests in tests.",
+    "highlight": "The pytest companion for httpx. A single httpx_mock fixture registers responses and asserts requests were made. The simplest way to test httpx-based code.",
     "features": ["sync", "async"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -732,6 +798,7 @@
     "category": "aiohttp Extensions",
     "stars": 271,
     "description": "Retry wrapper for aiohttp client requests with configurable strategies.",
+    "highlight": "Drop-in retry for aiohttp. Wraps ClientSession with configurable retry counts, status codes, and exponential backoff. The aiohttp equivalent of urllib3's built-in retry.",
     "features": ["async", "retry"],
     "ci_workflow": "python-package.yml",
     "deprecated": false
@@ -743,6 +810,7 @@
     "category": "aiohttp Extensions",
     "stars": 241,
     "description": "SOCKS4/5 and HTTP proxy connector for aiohttp.",
+    "highlight": "SOCKS proxy support for aiohttp. From the same author as httpx-socks — consistent proxy support across both major async clients.",
     "features": ["async", "proxy"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -754,6 +822,7 @@
     "category": "aiohttp Extensions",
     "stars": 151,
     "description": "Async persistent cache for aiohttp based on requests-cache.",
+    "highlight": "requests-cache's async sibling. Same multi-backend caching (SQLite, Redis, MongoDB) adapted for aiohttp's async world. From the same team, so the API feels familiar.",
     "features": ["async", "caching"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -765,6 +834,7 @@
     "category": "aiohttp Extensions",
     "stars": 47,
     "description": "Server-Sent Events client library built on aiohttp.",
+    "highlight": "SSE consumption for the aiohttp ecosystem. Handles automatic reconnection and last-event-id tracking per the SSE spec.",
     "features": ["async", "sse"],
     "ci_workflow": "pullrequest.yaml",
     "deprecated": false
@@ -776,6 +846,7 @@
     "category": "WebSocket",
     "stars": 5658,
     "description": "Full-featured WebSocket library: async by default, also has threading and sans-IO APIs.",
+    "highlight": "The reference Python WebSocket implementation. Uniquely offers three APIs: async, threading, and sans-I/O. Correctness-focused with full RFC 6455 compliance including edge cases most libraries skip.",
     "features": ["async", "sync", "websocket", "sans-io", "typed"],
     "ci_workflow": "tests.yml",
     "deprecated": false
@@ -787,6 +858,7 @@
     "category": "WebSocket",
     "stars": 3701,
     "description": "WebSocket client implementing hybi-13 protocol. Synchronous with threading support.",
+    "highlight": "The synchronous WebSocket client. When you don't want async but need WebSockets — simple blocking API with optional threading. The most downloaded WebSocket package on PyPI.",
     "features": ["sync", "websocket", "proxy"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -798,6 +870,7 @@
     "category": "WebSocket",
     "stars": 1129,
     "description": "WebSocket client and server library for Python.",
+    "highlight": "Older but proven WebSocket library that works with multiple event loops: gevent, cherrypy, tornado, and asyncio. Good for legacy projects on non-standard stacks.",
     "features": ["sync", "async", "websocket"],
     "ci_workflow": "python-package.yml",
     "deprecated": false
@@ -809,6 +882,7 @@
     "category": "SSE",
     "stars": 229,
     "description": "Pure-Python SSE client. Works with urllib3, requests, and httpx.",
+    "highlight": "Transport-agnostic SSE parsing. Works with any HTTP client that gives you a streaming response — just feed it bytes. The simplest way to consume SSE streams.",
     "features": ["sync", "sse"],
     "ci_workflow": null,
     "deprecated": false
@@ -820,6 +894,7 @@
     "category": "Download Manager",
     "stars": 557,
     "description": "Python interface to aria2 download utility for HTTP, FTP, and BitTorrent.",
+    "highlight": "Leverages aria2's C++ engine for multi-connection, multi-source downloads. Can saturate your bandwidth by splitting files into segments and downloading from mirrors simultaneously.",
     "features": ["sync", "async", "streaming"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -831,6 +906,7 @@
     "category": "Download Manager",
     "stars": 208,
     "description": "Smart download manager with multipart acceleration, mirrors, and pause/resume.",
+    "highlight": "Pure-Python download accelerator. Splits downloads into chunks, tries mirrors, and resumes after interruptions. No external dependencies like aria2 — everything is in Python.",
     "features": ["sync", "streaming"],
     "ci_workflow": null,
     "deprecated": false
@@ -842,6 +918,7 @@
     "category": "Download Manager",
     "stars": 104,
     "description": "Concurrent pure-Python downloader with resume and multi-segment support.",
+    "highlight": "Modern, actively maintained pure-Python downloader. Focuses on simplicity and reliability — concurrent segments, automatic resume, progress callbacks. The newer alternative to pySmartDL.",
     "features": ["sync", "async", "streaming"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -853,6 +930,7 @@
     "category": "Proxy / Transport",
     "stars": 1273,
     "description": "SOCKS4/5 proxy client. Used by requests[socks] and urllib3.",
+    "highlight": "The foundational SOCKS library for Python. When you pip install requests[socks], this is what you get. Also used by urllib3, scrapy, and many other clients for SOCKS support.",
     "features": ["sync", "proxy"],
     "ci_workflow": null,
     "deprecated": false
@@ -864,6 +942,7 @@
     "category": "Proxy / Transport",
     "stars": 121,
     "description": "Core SOCKS/HTTP proxy client with sync and async (asyncio, trio, curio) support.",
+    "highlight": "The modern replacement for PySocks with async support. Works with asyncio, trio, and curio. The shared foundation beneath both httpx-socks and aiohttp-socks.",
     "features": ["sync", "async", "proxy"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -875,6 +954,7 @@
     "category": "Retry / Resilience",
     "stars": 8515,
     "description": "General retrying library for Python. Widely used with HTTP clients.",
+    "highlight": "The most popular retry library in Python. Supports every retry strategy: fixed, exponential, random jitter, custom callbacks. Works with both sync and async. The de facto standard for resilient HTTP calls.",
     "features": ["sync", "async", "retry"],
     "ci_workflow": "ci.yaml",
     "deprecated": false
@@ -886,6 +966,7 @@
     "category": "Retry / Resilience",
     "stars": 1380,
     "description": "Production-grade retries. Opinionated wrapper around tenacity.",
+    "highlight": "Tenacity with opinions. Picks sensible defaults so you don't have to configure exponential backoff and jitter yourself. Built by the author of attrs — focused on production correctness.",
     "features": ["sync", "async", "retry"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -897,6 +978,7 @@
     "category": "Retry / Resilience",
     "stars": 2700,
     "description": "Function decorators for backoff and retry. Commonly used with HTTP clients.",
+    "highlight": "Retry via decorators. Cleaner syntax than tenacity for simple cases — just @backoff.on_exception and you're done. Supports async and custom retry predicates.",
     "features": ["sync", "async", "retry"],
     "ci_workflow": "codeql-analysis.yml",
     "deprecated": false
@@ -908,6 +990,7 @@
     "category": "Retry / Resilience",
     "stars": 490,
     "description": "Rate limiter using Leaky Bucket algorithm with SQLite and Redis backends.",
+    "highlight": "Precise rate limiting with persistent state. Unlike simple sleep-based throttling, uses the Leaky Bucket algorithm for smooth traffic shaping. Redis backend enables distributed rate limiting.",
     "features": ["sync", "async", "retry"],
     "ci_workflow": "build_test.yml",
     "deprecated": false
@@ -919,6 +1002,7 @@
     "category": "Testing / Mocking",
     "stars": 4200,
     "description": "Mock library for the requests package.",
+    "highlight": "The most popular requests mocking library, maintained by Sentry. Intercepts at the urllib3 level for reliable mocking. Supports callbacks, passthrough, and response recording.",
     "features": ["sync", "requests-api"],
     "ci_workflow": "ci.yml",
     "deprecated": false
@@ -930,6 +1014,7 @@
     "category": "Testing / Mocking",
     "stars": 700,
     "description": "Mock library for HTTPX with a clean assertion API.",
+    "highlight": "What responses is to requests, respx is to httpx. Pattern-based request matching with a fluent API. Built-in assertion helpers verify your code made the expected calls.",
     "features": ["sync", "async"],
     "ci_workflow": "test.yml",
     "deprecated": false
@@ -941,6 +1026,7 @@
     "category": "Testing / Mocking",
     "stars": 2900,
     "description": "Record and replay HTTP interactions for deterministic tests.",
+    "highlight": "Record real HTTP interactions to YAML cassettes, then replay them in tests. Works with any Python HTTP client by intercepting at the socket level. The gold standard for integration test fixtures.",
     "features": ["sync"],
     "ci_workflow": "main.yml",
     "deprecated": false
@@ -952,6 +1038,7 @@
     "category": "Testing / Mocking",
     "stars": 2200,
     "description": "Socket-level HTTP mock for Python. Works with any HTTP client.",
+    "highlight": "Mocks at the socket level, so it works with every HTTP client — requests, httpx, urllib, aiohttp, anything. The most universal HTTP mock, at the cost of being lower-level.",
     "features": ["sync"],
     "ci_workflow": null,
     "deprecated": false
@@ -963,6 +1050,7 @@
     "category": "Testing / Mocking",
     "stars": 582,
     "description": "VCR-style HTTP recording and replay designed specifically for Requests.",
+    "highlight": "VCR-style recording built specifically for requests (not socket-level like vcrpy). Tighter integration means better fidelity with requests' session and auth handling.",
     "features": ["sync", "requests-api"],
     "ci_workflow": "tox.yml",
     "deprecated": false
@@ -974,6 +1062,7 @@
     "category": "Testing / Mocking",
     "stars": 898,
     "description": "Debugging tool that traces all HTTP(S) client requests in any Python program.",
+    "highlight": "Attaches to any running Python program and shows every HTTP request in a web UI — timing, headers, bodies, TLS info. Like Chrome DevTools but for your Python scripts.",
     "features": ["sync", "async"],
     "ci_workflow": "build.yml",
     "deprecated": false
@@ -985,6 +1074,7 @@
     "category": "Deprecated",
     "stars": 1052,
     "description": "Early HTTP/2 client for Python. Archived — maintainers recommend httpx.",
+    "highlight": "Historically important as the first Python HTTP/2 client. Spawned the python-hyper project (h2, h11, hpack, hyperframe) that now powers most of the ecosystem. The grandparent of modern Python HTTP/2.",
     "features": ["sync", "http2"],
     "ci_workflow": null,
     "deprecated": true
@@ -996,6 +1086,7 @@
     "category": "Deprecated",
     "stars": 930,
     "description": "Added async/await support to requests. Archived — superseded by httpx.",
+    "highlight": "The proof-of-concept that became httpx. Demonstrated that the requests API could work with async/await, then the team built httpx as the proper implementation. Important evolutionary step.",
     "features": ["async", "requests-api"],
     "ci_workflow": null,
     "deprecated": true
@@ -1007,6 +1098,7 @@
     "category": "Deprecated",
     "stars": 83,
     "description": "HTTP client for everybody (sync + Trio + asyncio + Curio), based on urllib3. Stalled.",
+    "highlight": "Ambitious attempt to make urllib3 work across all async frameworks. The ideas influenced httpx and niquests, but the project stalled before reaching maturity.",
     "features": ["sync", "async", "connection-pool"],
     "ci_workflow": "ci.yml",
     "deprecated": true

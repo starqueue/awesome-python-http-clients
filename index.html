@@ -277,7 +277,6 @@
   }
 
   table {
-    width: 100%;
     border-collapse: collapse;
     font-size: 0.875rem;
   }
@@ -400,15 +399,24 @@
 
   /* Health cell */
   .health-cell {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    min-width: 120px;
+    white-space: nowrap;
+    width: 1%;
   }
   .health-cell img {
     height: 20px;
     width: auto;
-    display: block;
+    max-width: none;
+    display: inline-block;
+  }
+
+  /* Why It Matters column */
+  .highlight-cell {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    min-width: 200px;
+    max-width: 320px;
+    font-style: italic;
   }
 
   /* Empty state */
@@ -493,6 +501,7 @@
         <th data-sort="language" style="min-width:100px">Language <span class="sort-arrow">&#9650;</span></th>
         <th data-sort="category" style="min-width:130px">Category <span class="sort-arrow">&#9650;</span></th>
         <th style="min-width:200px">Features</th>
+        <th style="min-width:200px">Why It Matters</th>
         <th style="min-width:140px">Stars</th>
         <th style="min-width:140px">Last Commit</th>
         <th style="min-width:140px">Activity</th>
@@ -669,6 +678,7 @@ function render() {
       <td class="lang-cell"><span class="lang-dot" style="background:${color}"></span>${d.language}</td>
       <td class="cat-cell">${d.category}</td>
       <td><div class="features-cell">${featsHtml}</div></td>
+      <td class="highlight-cell">${d.highlight || ''}</td>
       <td class="health-cell"><img src="https://img.shields.io/github/stars/${repo}" alt="Stars" loading="lazy"></td>
       <td class="health-cell"><img src="https://img.shields.io/github/last-commit/${repo}" alt="Last commit" loading="lazy"></td>
       <td class="health-cell"><img src="https://img.shields.io/github/commit-activity/m/${repo}" alt="Activity" loading="lazy"></td>
