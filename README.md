@@ -2,6 +2,31 @@
 
 > A curated list of Python HTTP client libraries, from high-level clients to low-level protocol implementations.
 
+## Top 20 by GitHub Stars
+
+| # | Project | Stars |
+|---|---------|-------|
+| 1 | [curl_cffi](https://github.com/lexiforest/curl_cffi) | ![Stars](https://img.shields.io/github/stars/lexiforest/curl_cffi) |
+| 2 | [requests-html](https://github.com/psf/requests-html) | ![Stars](https://img.shields.io/github/stars/psf/requests-html) |
+| 3 | [tornado.httpclient](https://github.com/tornadoweb/tornado) | ![Stars](https://img.shields.io/github/stars/tornadoweb/tornado) |
+| 4 | [requests](https://github.com/psf/requests) | ![Stars](https://img.shields.io/github/stars/psf/requests) |
+| 5 | [aiohttp](https://github.com/aio-libs/aiohttp) | ![Stars](https://img.shields.io/github/stars/aio-libs/aiohttp) |
+| 6 | [httpx](https://github.com/encode/httpx) | ![Stars](https://img.shields.io/github/stars/encode/httpx) |
+| 7 | [MechanicalSoup](https://github.com/MechanicalSoup/MechanicalSoup) | ![Stars](https://img.shields.io/github/stars/MechanicalSoup/MechanicalSoup) |
+| 8 | [grequests](https://github.com/spyoungtech/grequests) | ![Stars](https://img.shields.io/github/stars/spyoungtech/grequests) |
+| 9 | [urllib3](https://github.com/urllib3/urllib3) | ![Stars](https://img.shields.io/github/stars/urllib3/urllib3) |
+| 10 | [curl-impersonate](https://github.com/lexiforest/curl-impersonate) | ![Stars](https://img.shields.io/github/stars/lexiforest/curl-impersonate) |
+| 11 | [requests-cache](https://github.com/requests-cache/requests-cache) | ![Stars](https://img.shields.io/github/stars/requests-cache/requests-cache) |
+| 12 | [requests-futures](https://github.com/ross/requests-futures) | ![Stars](https://img.shields.io/github/stars/ross/requests-futures) |
+| 13 | [niquests](https://github.com/jawah/niquests) | ![Stars](https://img.shields.io/github/stars/jawah/niquests) |
+| 14 | [geventhttpclient](https://github.com/geventhttpclient/geventhttpclient) | ![Stars](https://img.shields.io/github/stars/geventhttpclient/geventhttpclient) |
+| 15 | [httptools](https://github.com/MagicStack/httptools) | ![Stars](https://img.shields.io/github/stars/MagicStack/httptools) |
+| 16 | [pycurl](https://github.com/pycurl/pycurl) | ![Stars](https://img.shields.io/github/stars/pycurl/pycurl) |
+| 17 | [hyper](https://github.com/python-hyper/hyper) | ![Stars](https://img.shields.io/github/stars/python-hyper/hyper) |
+| 18 | [h2](https://github.com/python-hyper/h2) | ![Stars](https://img.shields.io/github/stars/python-hyper/h2) |
+| 19 | [requests-toolbelt](https://github.com/requests/toolbelt) | ![Stars](https://img.shields.io/github/stars/requests/toolbelt) |
+| 20 | [requests-oauthlib](https://github.com/requests/requests-oauthlib) | ![Stars](https://img.shields.io/github/stars/requests/requests-oauthlib) |
+
 ## Contents
 
 - [General-Purpose Clients](#general-purpose-clients)
@@ -376,6 +401,32 @@
 </td>
 </tr>
 
+<tr>
+<td><a href="https://github.com/geventhttpclient/geventhttpclient">geventhttpclient</a></td>
+<td><img src="https://img.shields.io/github/stars/geventhttpclient/geventhttpclient" alt="Stars"></td>
+<td>Python / C</td>
+<td>
+<ul>
+<li>High-performance concurrent HTTP client using gevent</li>
+<li>Fast C-based HTTP parser (llhttp from Node.js)</li>
+<li>HTTP/1.1 persistent connections and streaming</li>
+<li>Requests-compatible interface (since v2.3)</li>
+<li>httplib monkey-patching for compatibility</li>
+<li>Safe SSL via certifi CA bundle by default</li>
+<li>Designed for REST APIs and streaming APIs</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/geventhttpclient/geventhttpclient" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/geventhttpclient/geventhttpclient" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/geventhttpclient/geventhttpclient" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/geventhttpclient/geventhttpclient/test.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/geventhttpclient/geventhttpclient" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/geventhttpclient/geventhttpclient" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/geventhttpclient/geventhttpclient" alt="Release">
+</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -540,6 +591,31 @@
 </td>
 </tr>
 
+<tr>
+<td><a href="https://github.com/python-hyper/wsproto">wsproto</a></td>
+<td><img src="https://img.shields.io/github/stars/python-hyper/wsproto" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Pure-Python WebSocket protocol stack</li>
+<li>Sans-I/O state-machine design</li>
+<li>Full RFC 6455 (WebSocket) support</li>
+<li>RFC 7692 Compression Extensions support</li>
+<li>Supports both client and server roles</li>
+<li>Embeddable in any programming paradigm</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/python-hyper/wsproto" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/python-hyper/wsproto" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/python-hyper/wsproto" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/python-hyper/wsproto/ci.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/python-hyper/wsproto" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/python-hyper/wsproto" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/python-hyper/wsproto" alt="Release">
+</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -581,6 +657,32 @@
 <img src="https://img.shields.io/github/issues/lexiforest/curl_cffi" alt="Issues"><br>
 <img src="https://img.shields.io/github/issues-pr/lexiforest/curl_cffi" alt="PRs"><br>
 <img src="https://img.shields.io/github/v/release/lexiforest/curl_cffi" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/lexiforest/curl-impersonate">curl-impersonate</a></td>
+<td><img src="https://img.shields.io/github/stars/lexiforest/curl-impersonate" alt="Stars"></td>
+<td>C</td>
+<td>
+<ul>
+<li>Patched curl that impersonates browser TLS/HTTP fingerprints</li>
+<li>Chrome, Edge, Safari, Firefox fingerprint support</li>
+<li>Compiled with BoringSSL for browser-identical TLS handshakes</li>
+<li>HTTP/2 and HTTP/3 fingerprint support (QUIC)</li>
+<li>ECH, ZSTD compression, post-quantum curve support</li>
+<li>Core engine behind Python's curl_cffi library</li>
+<li>Available as CLI tool or library (libcurl replacement)</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/lexiforest/curl-impersonate" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/lexiforest/curl-impersonate" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/lexiforest/curl-impersonate" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/lexiforest/curl-impersonate/build.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/lexiforest/curl-impersonate" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/lexiforest/curl-impersonate" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/lexiforest/curl-impersonate" alt="Release">
 </td>
 </tr>
 
@@ -768,6 +870,55 @@
 <img src="https://img.shields.io/github/issues/karpetrosyan/hishel" alt="Issues"><br>
 <img src="https://img.shields.io/github/issues-pr/karpetrosyan/hishel" alt="PRs"><br>
 <img src="https://img.shields.io/github/v/release/karpetrosyan/hishel" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/requests/requests-oauthlib">requests-oauthlib</a></td>
+<td><img src="https://img.shields.io/github/stars/requests/requests-oauthlib" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>First-class OAuth library support for Requests</li>
+<li>OAuth 1 workflow support</li>
+<li>OAuth 2 workflow support (Authorization Code Grant)</li>
+<li>Built on top of OAuthlib</li>
+<li>Simple session-based API (OAuth1Session, OAuth2Session)</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/requests/requests-oauthlib" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/requests/requests-oauthlib" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/requests/requests-oauthlib" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/requests/requests-oauthlib/run-tests.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/requests/requests-oauthlib" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/requests/requests-oauthlib" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/requests/requests-oauthlib" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/requests/requests-kerberos">requests-kerberos</a></td>
+<td><img src="https://img.shields.io/github/stars/requests/requests-kerberos" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Kerberos/GSSAPI authentication for Requests</li>
+<li>Mutual authentication (REQUIRED, OPTIONAL, DISABLED)</li>
+<li>Works with credential cache or explicit principal/password</li>
+<li>Supports full requests.api surface</li>
+<li>Sanitize option for mutual auth error responses</li>
+<li>Cross-platform (Linux, macOS, Windows)</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/requests/requests-kerberos" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/requests/requests-kerberos" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/requests/requests-kerberos" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/requests/requests-kerberos/ci.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/requests/requests-kerberos" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/requests/requests-kerberos" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/requests/requests-kerberos" alt="Release">
 </td>
 </tr>
 
