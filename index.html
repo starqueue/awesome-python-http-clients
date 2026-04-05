@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome Python HTTP Clients</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f9fb;
+    --bg-card: #ffffff;
+    --bg-input: #ffffff;
+    --bg-hover: #f0f4ff;
+    --bg-tag: #e8edf5;
+    --bg-tag-active: #3b5bdb;
+    --border: #dde1e8;
+    --border-focus: #3b5bdb;
+    --text: #1a1d23;
+    --text-secondary: #5c6370;
+    --text-tag: #3b5bdb;
+    --text-tag-active: #ffffff;
+    --accent: #3b5bdb;
+    --accent-hover: #2b4bc8;
+    --deprecated: #e8590c;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
+    --radius: 8px;
+    --radius-sm: 6px;
+    --radius-full: 100px;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0f1117;
+    --bg-card: #1a1d27;
+    --bg-input: #1e2230;
+    --bg-hover: #252a3a;
+    --bg-tag: #252a3a;
+    --bg-tag-active: #4c6ef5;
+    --border: #2d3348;
+    --border-focus: #4c6ef5;
+    --text: #e4e7ec;
+    --text-secondary: #8b93a7;
+    --text-tag: #7c9aff;
+    --text-tag-active: #ffffff;
+    --accent: #4c6ef5;
+    --accent-hover: #5c7cff;
+    --deprecated: #ff8a4c;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  header h1 span { color: var(--accent); }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    transition: all 0.15s;
+  }
+  .github-link:hover { color: var(--text); border-color: var(--accent); }
+  .github-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+  .theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.15s;
+    color: var(--text-secondary);
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
+
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Filters Panel */
+  .filters {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .filters-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .filters-row:last-child { margin-bottom: 0; }
+
+  .search-box {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 0.55rem 0.75rem 0.55rem 2.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-input);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-family: inherit;
+    transition: border-color 0.15s;
+    outline: none;
+  }
+  .search-box input:focus { border-color: var(--border-focus); }
+  .search-box input::placeholder { color: var(--text-secondary); }
+  .search-box svg {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; height: 16px;
+    fill: none;
+    stroke: var(--text-secondary);
+    stroke-width: 2;
+  }
+
+  select {
+    padding: 0.55rem 2rem 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-input);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+    transition: border-color 0.15s;
+  }
+  select:focus { border-color: var(--border-focus); }
+
+  .filter-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-right: 0.25rem;
+  }
+
+  .match-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .match-toggle label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .match-toggle input { accent-color: var(--accent); }
+
+  /* Feature tags */
+  .tag-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg-tag);
+    color: var(--text-tag);
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .tag-chip:hover { border-color: var(--accent); }
+  .tag-chip.active {
+    background: var(--bg-tag-active);
+    color: var(--text-tag-active);
+    border-color: var(--bg-tag-active);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .stats-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .stats-count strong { color: var(--text); font-weight: 600; }
+
+  .clear-btn {
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    padding: 0.2rem 0;
+  }
+  .clear-btn:hover { text-decoration: underline; }
+
+  /* Table */
+  .table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  thead th {
+    background: var(--bg-card);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  thead th:hover { color: var(--text); }
+  thead th .sort-arrow {
+    display: inline-block;
+    margin-left: 0.3rem;
+    opacity: 0.3;
+    font-size: 0.65rem;
+  }
+  thead th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--bg-hover); }
+  tbody tr.deprecated-row { opacity: 0.6; }
+
+  td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+  }
+
+  /* Name cell */
+  .name-cell a {
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .name-cell a:hover { text-decoration: underline; }
+  .name-cell .desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+  .deprecated-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--deprecated);
+    border: 1px solid var(--deprecated);
+    border-radius: var(--radius-full);
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  /* Stars cell */
+  .stars-cell {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .stars-num {
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  /* Language cell */
+  .lang-cell {
+    white-space: nowrap;
+    font-size: 0.825rem;
+  }
+  .lang-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 0.35rem;
+    vertical-align: middle;
+  }
+
+  /* Category cell */
+  .cat-cell {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Features cell */
+  .features-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .feat-tag {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: var(--bg-tag);
+    color: var(--text-tag);
+    white-space: nowrap;
+  }
+
+  /* Health cell */
+  .health-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 120px;
+  }
+  .health-cell img {
+    height: 20px;
+    display: block;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+  }
+  .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .empty-state p { font-size: 0.95rem; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 1rem; }
+    header h1 { font-size: 1.35rem; }
+    .filters { padding: 1rem; }
+    .search-box { min-width: 100%; }
+    td { padding: 0.6rem 0.75rem; }
+    .name-cell .desc { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div>
+    <h1><span>Awesome</span> Python HTTP Clients</h1>
+  </div>
+  <div class="header-right">
+    <a class="github-link" href="https://github.com/starqueue/awesome-python-http-clients" target="_blank">
+      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub
+    </a>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" aria-label="Toggle theme">
+      <span id="theme-icon">&#9790;</span>
+    </button>
+  </div>
+</header>
+
+<p class="subtitle" id="subtitle"></p>
+
+<div class="filters">
+  <div class="filters-row">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search" placeholder="Search libraries..." autocomplete="off">
+    </div>
+    <span class="filter-label">Language</span>
+    <select id="lang-filter"><option value="">All Languages</option></select>
+    <span class="filter-label">Category</span>
+    <select id="cat-filter"><option value="">All Categories</option></select>
+    <span class="filter-label">Sort</span>
+    <select id="sort-select">
+      <option value="stars-desc">Stars (high to low)</option>
+      <option value="stars-asc">Stars (low to high)</option>
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+    </select>
+  </div>
+  <div class="filters-row">
+    <span class="filter-label">Features</span>
+    <div class="tag-bar" id="tag-bar"></div>
+    <div class="match-toggle">
+      <label><input type="radio" name="match" value="any" checked> Any</label>
+      <label><input type="radio" name="match" value="all"> All</label>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <span class="stats-count" id="stats-count"></span>
+  <button class="clear-btn" id="clear-btn" onclick="clearFilters()">Clear all filters</button>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th data-sort="name" style="min-width:200px">Project <span class="sort-arrow">&#9650;</span></th>
+        <th data-sort="stars" class="sorted" style="min-width:90px">Stars <span class="sort-arrow">&#9660;</span></th>
+        <th data-sort="language" style="min-width:100px">Language <span class="sort-arrow">&#9650;</span></th>
+        <th data-sort="category" style="min-width:130px">Category <span class="sort-arrow">&#9650;</span></th>
+        <th style="min-width:200px">Features</th>
+        <th style="min-width:140px">Stars</th>
+        <th style="min-width:140px">Last Commit</th>
+        <th style="min-width:140px">Activity</th>
+        <th style="min-width:140px">Build</th>
+        <th style="min-width:140px">Issues</th>
+        <th style="min-width:140px">PRs</th>
+        <th style="min-width:140px">Release</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <div class="empty-state" id="empty-state" style="display:none">
+    <div class="icon">&#128269;</div>
+    <p>No libraries match your filters.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+const LANG_COLORS = {
+  'Python': '#3572A5',
+  'Python / C': '#306998',
+  'Python / Cython': '#FFD43B',
+  'Rust': '#DEA584',
+  'Go': '#00ADD8',
+  'C': '#555555',
+  'Python / Cython': '#646464',
+};
+
+const FEATURE_LABELS = {
+  'sync': 'Sync',
+  'async': 'Async',
+  'http2': 'HTTP/2',
+  'http3': 'HTTP/3',
+  'websocket': 'WebSocket',
+  'sse': 'SSE',
+  'tls-fingerprint': 'TLS Fingerprint',
+  'connection-pool': 'Conn Pool',
+  'proxy': 'Proxy',
+  'streaming': 'Streaming',
+  'cookies': 'Cookies',
+  'auth': 'Auth',
+  'caching': 'Caching',
+  'retry': 'Retry',
+  'typed': 'Typed',
+  'sans-io': 'Sans-IO',
+  'requests-api': 'Requests API',
+  'multipart': 'Multipart',
+  'compression': 'Compression',
+  'graphql': 'GraphQL',
+  'soap': 'SOAP',
+};
+
+let data = [];
+let activeTags = new Set();
+let currentSort = { key: 'stars', dir: 'desc' };
+
+async function init() {
+  const resp = await fetch('data.json');
+  data = await resp.json();
+  buildDropdowns();
+  buildTagBar();
+  applyFromHash();
+  render();
+  setupListeners();
+  updateThemeIcon();
+}
+
+function buildDropdowns() {
+  const langs = [...new Set(data.map(d => d.language))].sort();
+  const cats = [...new Set(data.map(d => d.category))].sort();
+  const langSel = document.getElementById('lang-filter');
+  const catSel = document.getElementById('cat-filter');
+  langs.forEach(l => { const o = document.createElement('option'); o.value = l; o.textContent = l; langSel.appendChild(o); });
+  cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
+}
+
+function buildTagBar() {
+  const allFeats = new Set();
+  data.forEach(d => d.features.forEach(f => allFeats.add(f)));
+  const bar = document.getElementById('tag-bar');
+  const ordered = Object.keys(FEATURE_LABELS).filter(f => allFeats.has(f));
+  ordered.forEach(f => {
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.textContent = FEATURE_LABELS[f] || f;
+    chip.dataset.feature = f;
+    chip.addEventListener('click', () => {
+      if (activeTags.has(f)) { activeTags.delete(f); chip.classList.remove('active'); }
+      else { activeTags.add(f); chip.classList.add('active'); }
+      render();
+      updateHash();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function getMatchMode() {
+  return document.querySelector('input[name="match"]:checked').value;
+}
+
+function getFiltered() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const lang = document.getElementById('lang-filter').value;
+  const cat = document.getElementById('cat-filter').value;
+  const matchMode = getMatchMode();
+
+  return data.filter(d => {
+    if (q && !d.name.toLowerCase().includes(q) && !d.description.toLowerCase().includes(q) && !d.repo.toLowerCase().includes(q)) return false;
+    if (lang && d.language !== lang) return false;
+    if (cat && d.category !== cat) return false;
+    if (activeTags.size > 0) {
+      if (matchMode === 'all') {
+        for (const t of activeTags) { if (!d.features.includes(t)) return false; }
+      } else {
+        let found = false;
+        for (const t of activeTags) { if (d.features.includes(t)) { found = true; break; } }
+        if (!found) return false;
+      }
+    }
+    return true;
+  });
+}
+
+function getSorted(items) {
+  const { key, dir } = currentSort;
+  const mult = dir === 'asc' ? 1 : -1;
+  return [...items].sort((a, b) => {
+    let av = a[key], bv = b[key];
+    if (typeof av === 'string') av = av.toLowerCase();
+    if (typeof bv === 'string') bv = bv.toLowerCase();
+    if (av < bv) return -1 * mult;
+    if (av > bv) return 1 * mult;
+    return 0;
+  });
+}
+
+function render() {
+  const filtered = getFiltered();
+  const sorted = getSorted(filtered);
+  const tbody = document.getElementById('table-body');
+  const empty = document.getElementById('empty-state');
+
+  document.getElementById('subtitle').textContent = `A curated, searchable directory of ${data.length} libraries in the Python HTTP ecosystem.`;
+  document.getElementById('stats-count').innerHTML = `Showing <strong>${sorted.length}</strong> of <strong>${data.length}</strong> libraries`;
+
+  if (sorted.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  const html = sorted.map(d => {
+    const color = LANG_COLORS[d.language] || '#888';
+    const url = `https://github.com/${d.repo}`;
+    const depBadge = d.deprecated ? `<span class="deprecated-badge">Deprecated</span>` : '';
+    const rowClass = d.deprecated ? 'deprecated-row' : '';
+
+    const featsHtml = d.features.map(f =>
+      `<span class="feat-tag">${FEATURE_LABELS[f] || f}</span>`
+    ).join('');
+
+    const repo = d.repo;
+    const ciParam = d.ci_workflow ? `/status/${repo}/${d.ci_workflow}` : '';
+
+    return `<tr class="${rowClass}">
+      <td class="name-cell">
+        <a href="${url}" target="_blank">${d.name}</a>${depBadge}
+        <div class="desc">${d.description}</div>
+      </td>
+      <td class="stars-cell"><span class="stars-num">${d.stars.toLocaleString()}</span></td>
+      <td class="lang-cell"><span class="lang-dot" style="background:${color}"></span>${d.language}</td>
+      <td class="cat-cell">${d.category}</td>
+      <td><div class="features-cell">${featsHtml}</div></td>
+      <td class="health-cell"><img src="https://img.shields.io/github/stars/${repo}" alt="Stars" loading="lazy"></td>
+      <td class="health-cell"><img src="https://img.shields.io/github/last-commit/${repo}" alt="Last commit" loading="lazy"></td>
+      <td class="health-cell"><img src="https://img.shields.io/github/commit-activity/m/${repo}" alt="Activity" loading="lazy"></td>
+      <td class="health-cell">${d.ci_workflow ? `<img src="https://img.shields.io/github/actions/workflow/status/${repo}/${d.ci_workflow}" alt="Build" loading="lazy">` : '<span style="color:var(--text-secondary);font-size:0.75rem">N/A</span>'}</td>
+      <td class="health-cell"><img src="https://img.shields.io/github/issues/${repo}" alt="Issues" loading="lazy"></td>
+      <td class="health-cell"><img src="https://img.shields.io/github/issues-pr/${repo}" alt="PRs" loading="lazy"></td>
+      <td class="health-cell"><img src="https://img.shields.io/github/v/release/${repo}" alt="Release" loading="lazy"></td>
+    </tr>`;
+  }).join('');
+
+  tbody.innerHTML = html;
+}
+
+function setupListeners() {
+  document.getElementById('search').addEventListener('input', () => { render(); updateHash(); });
+  document.getElementById('lang-filter').addEventListener('change', () => { render(); updateHash(); });
+  document.getElementById('cat-filter').addEventListener('change', () => { render(); updateHash(); });
+  document.getElementById('sort-select').addEventListener('change', (e) => {
+    const [key, dir] = e.target.value.split('-');
+    currentSort = { key, dir };
+    updateSortHeaders();
+    render();
+    updateHash();
+  });
+  document.querySelectorAll('input[name="match"]').forEach(r => r.addEventListener('change', () => { render(); updateHash(); }));
+
+  document.querySelectorAll('thead th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (currentSort.key === key) {
+        currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort = { key, dir: key === 'stars' ? 'desc' : 'asc' };
+      }
+      const sel = document.getElementById('sort-select');
+      const val = `${key}-${currentSort.dir}`;
+      if ([...sel.options].some(o => o.value === val)) sel.value = val;
+      updateSortHeaders();
+      render();
+      updateHash();
+    });
+  });
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll('thead th[data-sort]').forEach(th => {
+    const key = th.dataset.sort;
+    th.classList.toggle('sorted', key === currentSort.key);
+    th.querySelector('.sort-arrow').innerHTML = (key === currentSort.key && currentSort.dir === 'desc') ? '&#9660;' : '&#9650;';
+  });
+}
+
+function clearFilters() {
+  document.getElementById('search').value = '';
+  document.getElementById('lang-filter').value = '';
+  document.getElementById('cat-filter').value = '';
+  document.getElementById('sort-select').value = 'stars-desc';
+  currentSort = { key: 'stars', dir: 'desc' };
+  activeTags.clear();
+  document.querySelectorAll('.tag-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('input[name="match"][value="any"]').checked = true;
+  updateSortHeaders();
+  render();
+  history.replaceState(null, '', location.pathname);
+}
+
+function updateHash() {
+  const params = new URLSearchParams();
+  const q = document.getElementById('search').value.trim();
+  const lang = document.getElementById('lang-filter').value;
+  const cat = document.getElementById('cat-filter').value;
+  if (q) params.set('q', q);
+  if (lang) params.set('lang', lang);
+  if (cat) params.set('cat', cat);
+  if (activeTags.size) params.set('tags', [...activeTags].join(','));
+  if (getMatchMode() === 'all') params.set('match', 'all');
+  if (currentSort.key !== 'stars' || currentSort.dir !== 'desc') params.set('sort', `${currentSort.key}-${currentSort.dir}`);
+  const hash = params.toString();
+  history.replaceState(null, '', hash ? '#' + hash : location.pathname);
+}
+
+function applyFromHash() {
+  if (!location.hash) return;
+  const params = new URLSearchParams(location.hash.slice(1));
+  if (params.has('q')) document.getElementById('search').value = params.get('q');
+  if (params.has('lang')) document.getElementById('lang-filter').value = params.get('lang');
+  if (params.has('cat')) document.getElementById('cat-filter').value = params.get('cat');
+  if (params.has('tags')) {
+    params.get('tags').split(',').forEach(t => {
+      activeTags.add(t);
+      const chip = document.querySelector(`.tag-chip[data-feature="${t}"]`);
+      if (chip) chip.classList.add('active');
+    });
+  }
+  if (params.has('match') && params.get('match') === 'all') {
+    document.querySelector('input[name="match"][value="all"]').checked = true;
+  }
+  if (params.has('sort')) {
+    const [key, dir] = params.get('sort').split('-');
+    currentSort = { key, dir };
+    const sel = document.getElementById('sort-select');
+    const val = `${key}-${dir}`;
+    if ([...sel.options].some(o => o.value === val)) sel.value = val;
+    updateSortHeaders();
+  }
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  const theme = document.documentElement.getAttribute('data-theme');
+  document.getElementById('theme-icon').innerHTML = theme === 'dark' ? '&#9788;' : '&#9790;';
+}
+
+(function() {
+  const saved = localStorage.getItem('theme');
+  const prefer = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', saved || prefer);
+})();
+
+init();
+</script>
+</body>
+</html>
