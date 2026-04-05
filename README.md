@@ -136,6 +136,32 @@
 </tr>
 
 <tr>
+<td><a href="https://github.com/httplib2/httplib2">httplib2</a></td>
+<td><img src="https://img.shields.io/github/stars/httplib2/httplib2" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Small, fast HTTP client library</li>
+<li>Persistent (keep-alive) connections</li>
+<li>HTTP caching support</li>
+<li>Automatic handling of redirects and compression</li>
+<li>SSL/TLS certificate validation</li>
+<li>Google App Engine support</li>
+<li>Various authentication schemes</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/httplib2/httplib2" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/httplib2/httplib2" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/httplib2/httplib2" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/httplib2/httplib2/test.yaml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/httplib2/httplib2" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/httplib2/httplib2" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/httplib2/httplib2" alt="Release">
+</td>
+</tr>
+
+<tr>
 <td><a href="https://github.com/pycurl/pycurl">pycurl</a></td>
 <td><img src="https://img.shields.io/github/stars/pycurl/pycurl" alt="Stars"></td>
 <td>Python / C</td>
@@ -252,6 +278,32 @@
 <img src="https://img.shields.io/github/issues/theelous3/asks" alt="Issues"><br>
 <img src="https://img.shields.io/github/issues-pr/theelous3/asks" alt="PRs"><br>
 <img src="https://img.shields.io/github/v/release/theelous3/asks" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/tornadoweb/tornado">tornado.httpclient</a></td>
+<td><img src="https://img.shields.io/github/stars/tornadoweb/tornado" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Async HTTP client (AsyncHTTPClient) with configurable implementations</li>
+<li>SimpleAsyncHTTPClient (pure-Python) and CurlAsyncHTTPClient (libcurl)</li>
+<li>HTTP/1.x and HTTP/2 support (via curl backend)</li>
+<li>Streaming request and response body support</li>
+<li>Automatic redirect following and authentication</li>
+<li>Proxy support</li>
+<li>Part of the mature Tornado async networking framework</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/tornadoweb/tornado" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/tornadoweb/tornado" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/tornadoweb/tornado" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/tornadoweb/tornado/test.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/tornadoweb/tornado" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/tornadoweb/tornado" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/tornadoweb/tornado" alt="Release">
 </td>
 </tr>
 
@@ -533,6 +585,31 @@
 </tr>
 
 <tr>
+<td><a href="https://github.com/MechanicalSoup/MechanicalSoup">MechanicalSoup</a></td>
+<td><img src="https://img.shields.io/github/stars/MechanicalSoup/MechanicalSoup" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Automates website interaction (browser-like)</li>
+<li>Built on top of Requests and BeautifulSoup</li>
+<li>Automatic form filling and submission</li>
+<li>Follows links programmatically</li>
+<li>Cookie and session management</li>
+<li>Lightweight alternative to Selenium for non-JS sites</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/MechanicalSoup/MechanicalSoup" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/MechanicalSoup/MechanicalSoup" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/MechanicalSoup/MechanicalSoup" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/MechanicalSoup/MechanicalSoup/python-package.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/MechanicalSoup/MechanicalSoup" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/MechanicalSoup/MechanicalSoup" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/MechanicalSoup/MechanicalSoup" alt="Release">
+</td>
+</tr>
+
+<tr>
 <td><a href="https://github.com/psf/requests-html">requests-html</a></td>
 <td><img src="https://img.shields.io/github/stars/psf/requests-html" alt="Stars"></td>
 <td>Python</td>
@@ -640,6 +717,57 @@
 <img src="https://img.shields.io/github/issues/requests/toolbelt" alt="Issues"><br>
 <img src="https://img.shields.io/github/issues-pr/requests/toolbelt" alt="PRs"><br>
 <img src="https://img.shields.io/github/v/release/requests/toolbelt" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/requests-cache/requests-cache">requests-cache</a></td>
+<td><img src="https://img.shields.io/github/stars/requests-cache/requests-cache" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>Transparent persistent HTTP cache for requests</li>
+<li>Multiple backends: SQLite, Redis, MongoDB, DynamoDB, filesystem</li>
+<li>Expiration/TTL control with URL-pattern-based rules</li>
+<li>Drop-in replacement via CachedSession or monkeypatching</li>
+<li>Serialization options (JSON, BSON, pickle)</li>
+<li>Cache filtering and conditional request support</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/requests-cache/requests-cache" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/requests-cache/requests-cache" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/requests-cache/requests-cache" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/requests-cache/requests-cache/build.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/requests-cache/requests-cache" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/requests-cache/requests-cache" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/requests-cache/requests-cache" alt="Release">
+</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/karpetrosyan/hishel">hishel</a></td>
+<td><img src="https://img.shields.io/github/stars/karpetrosyan/hishel" alt="Stars"></td>
+<td>Python</td>
+<td>
+<ul>
+<li>RFC 9111 compliant HTTP caching</li>
+<li>Drop-in integration with HTTPX, Requests, and ASGI frameworks</li>
+<li>SQLite storage backend</li>
+<li>Full async and sync support</li>
+<li>Streaming support for large payloads</li>
+<li>GraphQL query caching (body-sensitive)</li>
+<li>Fully typed with comprehensive type hints</li>
+</ul>
+</td>
+<td>
+<img src="https://img.shields.io/github/stars/karpetrosyan/hishel" alt="Stars"><br>
+<img src="https://img.shields.io/github/last-commit/karpetrosyan/hishel" alt="Last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/m/karpetrosyan/hishel" alt="Commit activity"><br>
+<img src="https://img.shields.io/github/actions/workflow/status/karpetrosyan/hishel/ci.yml" alt="Build"><br>
+<img src="https://img.shields.io/github/issues/karpetrosyan/hishel" alt="Issues"><br>
+<img src="https://img.shields.io/github/issues-pr/karpetrosyan/hishel" alt="PRs"><br>
+<img src="https://img.shields.io/github/v/release/karpetrosyan/hishel" alt="Release">
 </td>
 </tr>
 
