@@ -396,6 +396,30 @@
     "deprecated": false
   },
   {
+    "name": "hrequests",
+    "repo": "daijro/hrequests",
+    "language": "Python",
+    "category": "TLS Fingerprinting",
+    "stars": 998,
+    "description": "Web scraping HTTP client with TLS fingerprinting via Playwright and browser impersonation.",
+    "highlight": "Combines requests-like simplicity with real browser TLS fingerprints via Playwright. Can render JavaScript, rotate browser profiles, and bypass CAPTCHAs — a full scraping toolkit disguised as an HTTP client.",
+    "features": ["sync", "async", "tls-fingerprint", "cookies", "proxy", "requests-api"],
+    "ci_workflow": null,
+    "deprecated": false
+  },
+  {
+    "name": "cycletls_python",
+    "repo": "Danny-Dasilva/cycletls_python",
+    "language": "Go",
+    "category": "TLS Fingerprinting",
+    "stars": 37,
+    "description": "Python bindings for CycleTLS Go engine. TLS/JA3 fingerprint spoofing for anti-bot bypass.",
+    "highlight": "Wraps the Go-based CycleTLS engine known for reliable JA3 spoofing. Define a browser profile or raw JA3 string and the Go core executes with that exact TLS signature.",
+    "features": ["sync", "async", "tls-fingerprint", "proxy"],
+    "ci_workflow": "main.yml",
+    "deprecated": false
+  },
+  {
     "name": "requests-html",
     "repo": "psf/requests-html",
     "language": "Python",
@@ -788,6 +812,18 @@
     "description": "Pytest fixture to mock HTTPX requests in tests.",
     "highlight": "The pytest companion for httpx. A single httpx_mock fixture registers responses and asserts requests were made. The simplest way to test httpx-based code.",
     "features": ["sync", "async"],
+    "ci_workflow": "test.yml",
+    "deprecated": false
+  },
+  {
+    "name": "httpx-curl-cffi",
+    "repo": "vgavro/httpx-curl-cffi",
+    "language": "Python",
+    "category": "HTTPX Extensions",
+    "stars": 36,
+    "description": "HTTPX transport backend using curl_cffi for native curl performance and TLS fingerprinting.",
+    "highlight": "Bridges httpx and curl_cffi — use httpx's clean API but route traffic through curl-impersonate's native engine. Get TLS fingerprinting without leaving the httpx ecosystem.",
+    "features": ["sync", "async", "tls-fingerprint", "http2"],
     "ci_workflow": "test.yml",
     "deprecated": false
   },
